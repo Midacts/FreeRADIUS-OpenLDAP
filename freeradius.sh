@@ -74,7 +74,7 @@ function configureFreeradius(){
 		sed -i '/identity/c\        identity = "cn='$user',dc='${suffix[0]}',dc='${suffix[1]}'"' $prefix/mods-available/ldap
 
 	# Configures the rootdn's password
-		sed -i '/password = mypass/c\        password = "'$password'"' $prefix/mods-available/ldap
+		sed -i '/password = mypass/c\        password = "'"$password"'"' $prefix/mods-available/ldap
 
 	# Configures the base dn
 		sed -i '/base_dn = "dc=example,dc=org"/c\        base_dn = "dc='${suffix[0]}',dc='${suffix[1]}'"' $prefix/mods-available/ldap

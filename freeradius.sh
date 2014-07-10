@@ -199,17 +199,26 @@ EOZ
 }
 
 # Check privileges
-[ $(whoami) == "root" ] || die "You need to run this script as root."
+	[ $(whoami) == "root" ] || die "You need to run this script as root."
 
 # Welcome to the script
-clear
-echo
-echo
-echo -e '               \e[01;37;42mWelcome to Midacts Mystery'\''s FreeRADIUS Installer!\e[0m'
-echo
-case "$go" in
-        * )
-                        doAll ;;
-esac
+	clear
+	welcome=$(cat << EOA
+
+
+               \e[01;37;42mWelcome to Midacts Mystery's FreeRADIUS Installer!\e[0m
+
+
+EOA
+)
+
+# Calls the welcome variable
+	echo -e "$welcome"
+
+# Calls the doAll function
+	case "$go" in
+		* )
+			doAll ;;
+	esac
 
 exit 0

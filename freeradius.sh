@@ -154,6 +154,8 @@ EOI
 }
 function doAll(){
 	# Calls Function 'freeradiusInstall'
+		echo
+		echo
 		echo -e "\e[33m=== Install FreeRADIUS ? (y/n)\e[0m"
 		read yesno
 		if [ "$yesno" = "y" ]; then

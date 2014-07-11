@@ -10,13 +10,15 @@
 ########
 # Enable OpenLDAP on your FreeRADIUS server
 # -----------------------------------------
-# Your FreeRADIUS server must be able to talk to your OpenLDAP server in order to retreive users and groups
+# Your FreeRADIUS server must be able to talk to your OpenLDAP server in order to 
+# retreive users and groups.
 # I recommend using my puppet openldap class (https://github.com/Midacts/openldap_client)
 
 # Copy over your OpenLDAP server's CA certificate
 # -----------------------------------------------
-# In order to use start_tls on your FreeRADIUS server to the OpenLDAP server, you must tell FreeRADIUS where the OpenLDAP server's
-# CA certificate is located. In this script, I have it set to $prefix/certs (/usr/local/etc/raddb/certs by default).
+# In order to use start_tls on your FreeRADIUS server to the OpenLDAP server, you must 
+# tell FreeRADIUS where the OpenLDAP server's CA certificate is located. 
+# In this script, I have it set to $prefix/certs (/usr/local/etc/raddb/certs by default).
 #
 # Be sure to copy the CA certificate to $prefix/certs before initiating the script if you wish to use start_tls.
 
@@ -29,7 +31,8 @@
 
 # TESTING
 # -------
-# On the FreeRADIUS server, run this command to start the server in debug mode (so you can see the logs inn real-time)
+# On the FreeRADIUS server, run this command to start the server in debug mode.
+# (so you can see the logs inn real-time).
 radiusd -XXX
 
 # Then run this command to test your configuration
@@ -42,8 +45,10 @@ radtest username password localhost 18120 testing123
 # If you want to add radius attributes to your OpenLDAP server:
 # -------------------------------------------------------------
 # Copy the radius schema to your OpenLDAP server
-# Browse to the freeradius-server-xxx directory and copy the openldap,ldif file to your OpenLDAP server
-# I would recomment renaming the file to something like radius.ldif as there is probably already an openldap.ldif file 
+# Browse to the freeradius-server-xxx directory and copy the 
+# openldap.ldif file to your OpenLDAP server
+# I would recomment renaming the file to something like radius.ldif as there is probably 
+# already an openldap.ldif file 
 # on your OpenLDAP server
 cd
 cd freeradius-server-$rad_ver

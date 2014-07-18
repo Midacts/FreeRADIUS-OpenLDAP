@@ -58,3 +58,11 @@ scp doc/schemas/ldap/openldap.ldif $user@openldapserver:/usr/local/etc/openldap/
 ldapadd -D cn=admin,cn=config -w "password" -f /usr/local/etc/openldap/schema/radius.ldif -ZZ
 
 # With this your should now be able to add radius attributes to objects in your OpenLDAP directory
+
+##########
+# CLIENTS
+##########
+# These are the settings I used to get FreeRADIUS working with an OpenLDAP server and a Ubiquiti Unifi AP
+#
+# Phase 1: EAP-TTLS
+# Phase 2: PAP
